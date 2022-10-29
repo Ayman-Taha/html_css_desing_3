@@ -1,0 +1,55 @@
+/****************************/
+/***** Global Variables *****/
+/****************************/
+
+:root {
+	--main-color: #2196f3;
+	--alt-color: #1787e0;
+}
+
+/************************/
+/***** Global Rules *****/
+/************************/
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Cairo", sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* small screens */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+/* medium screens */
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+/* large screens */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
