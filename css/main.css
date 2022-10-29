@@ -5,6 +5,7 @@
 :root {
 	--main-color: #2196f3;
 	--alt-color: #1787e0;
+	--transition-duration: 0.3s;
 }
 
 /************************/
@@ -12,9 +13,9 @@
 /************************/
 
 * {
-	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	scroll-behavior: smooth;
 	padding: 0;
 	margin: 0;
@@ -26,6 +27,10 @@ body {
 
 ul {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }
 
 .container {
@@ -51,5 +56,102 @@ ul {
 @media (min-width: 1200px) {
 	.container {
 		width: 1170px;
+	}
+}
+
+/******************/
+/***** Header *****/
+/******************/
+
+.header {
+	background-color: white;
+	-moz-box-shadow: 0 0 10px #ddd;
+	-webkit-ox-shadow: 0 0 10px #ddd;
+	box-shadow: 0 0 10px #ddd;
+	position: relative;
+}
+
+.header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.header .logo {
+	color: var(--main-color);
+	font-size: 30px;
+	font-weight: bold;
+	height: 72px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header .main-nav {
+	display: flex;
+}
+
+.header .main-nav > li > a {
+	height: 72px;
+	color: black;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 0 30px;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+/* hover effects fill border and change bgcolor */
+
+.header .main-nav > li > a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background-color: var(--main-color);
+	overflow: hidden;
+	top: 0;
+	left: -100%;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+.header .main-nav > li > a:hover {
+	color: var(--main-color);
+	background-color: #fafafa;
+	overflow: hidden;
+}
+
+.header .main-nav > li > a:hover::before {
+	left: 0;
+}
+
+/* responsiveness small screens */
+
+@media (max-width: 767px) {
+	.header .logo {
+		width: 100%;
+		height: 50px;
+	}
+
+	.header .main-nav {
+		margin: auto;
+	}
+
+	.header .main-nav > li > a {
+		padding: 10px;
+		font-size: 14px;
+		height: 40px;
 	}
 }
