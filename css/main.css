@@ -81,7 +81,7 @@ a {
 
 .header .logo {
 	color: var(--main-color);
-	font-size: 30px;
+	font-size: 2rem;
 	font-weight: bold;
 	height: 72px;
 	display: flex;
@@ -96,7 +96,7 @@ a {
 .header .main-nav > li > a {
 	height: 72px;
 	color: black;
-	font-size: 20px;
+	font-size: 1.25rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -152,11 +152,64 @@ a {
 
 	.header .main-nav > li > a {
 		padding: 10px;
-		font-size: 14px;
+		font-size: 1rem;
 		height: 40px;
 	}
 }
 
+/* Mega Menu */
+
+.header .mega-menu {
+	position: absolute;
+	left: 0;
+	top: calc(100% - 50px);
+	opacity: 0;
+	width: 100%;
+	padding: 30px;
+	background-color: white;
+	border-bottom: 3px solid var(--main-color);
+	z-index: 3;
+	display: flex;
+	gap: 40px;
+	-webkit-transition: top var(--transition-duration),
+		opacity var(--transition-duration);
+	-moz-transition: top var(--transition-duration),
+		opacity var(--transition-duration);
+	-ms-transition: top var(--transition-duration),
+		opacity var(--transition-duration);
+	-o-transition: top var(--transition-duration),
+		opacity var(--transition-duration);
+	transition: top var(--transition-duration), opacity var(--transition-duration);
+}
+
+.header .mega-menu .image img {
+	max-width: 100%;
+}
+
+.header .mega-menu .links {
+}
+
+.header .mega-menu .links li {
+}
+
+.header .mega-menu .links li::before {
+	content: "";
+}
+
+.header .mega-menu .links li:hover::before {
+}
+
+.header .mega-menu .links li a {
+	color: var(--main-color);
+	display: block;
+	padding: 15px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.header .mega-menu .links li i {
+	margin-right: 10px;
+}
 /*******************/
 /***** Landing *****/
 /*******************/
@@ -194,12 +247,12 @@ a {
 }
 
 .landing .text h1 {
-	font-size: 40px;
+	font-size: 2.5rem;
 	letter-spacing: -2px;
 }
 
 .landing .text p {
-	font-size: 24px;
+	font-size: 1.5px;
 	line-height: 1.7;
 	margin: 5px 0 0;
 	color: #666;
@@ -257,11 +310,11 @@ a {
 
 @media (max-width: 767px) {
 	.landing .text h1 {
-		font-size: 28px;
+		font-size: 1.5rem;
 	}
 
 	.landing .text p {
-		font-size: 18px;
+		font-size: 1rem;
 	}
 }
 
