@@ -8,6 +8,7 @@
 	--fill-effect-color: #fafafa;
 	--transition-duration: 0.3s;
 	--section-padding: 100px 0;
+	--section-bgcolor: #ececec;
 }
 
 /************************/
@@ -117,7 +118,9 @@ a {
 .section-heading:hover {
 	color: white;
 	border: 2px solid white;
-	transition-delay: var(--transition-duration);
+	transition-delay: var(
+		--transition-duration
+	); /* to delay the color changes after fill */
 }
 
 .section-heading:hover::before {
@@ -382,7 +385,7 @@ a {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #ececec;
+	background-color: var(--section-bgcolor);
 	z-index: -1;
 	-webkit-transform: skewY(-6deg);
 	-moz-transform: skewY(-6deg);
@@ -602,4 +605,89 @@ a {
 		-o-transform: translateX(10px);
 		transform: translateX(10px);
 	}
+}
+
+/*******************/
+/***** Gallery *****/
+/*******************/
+
+.gallery {
+	padding: var(--section-padding);
+	position: relative;
+	background-color: var(--section-bgcolor);
+}
+
+.gallery .container {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(300px, 1fr)
+	); /* decrease min if we need more boxes per row */
+	gap: 30px;
+}
+
+.gallery .expo {
+	padding: 15px;
+	background-color: white;
+	box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.13),
+		0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.gallery .expo .image {
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery .expo .image::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	background-color: rgba(255, 255, 255, 0.2);
+	opacity: 0;
+	z-index: 2; /* to make sure this effect is over the rotating image effect */
+}
+
+/* expo effects on hovering */
+/* flashing */
+.gallery .expo .image:hover::before {
+	-webkit-animation: flashing 0.7s;
+	animation: flashing 0.7s;
+}
+
+@keyframes flashing {
+	0%,
+	40% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		width: 200%;
+		height: 200%;
+	}
+}
+
+.gallery .expo img {
+	max-width: 100%;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+/* rotation and scaling */
+.gallery .expo .image:hover img {
+	-webkit-transform: rotate(5deg) scale(1.1);
+	-moz-transform: rotate(5deg) scale(1.1);
+	-ms-transform: rotate(5deg) scale(1.1);
+	-o-transform: rotate(5deg) scale(1.1);
+	transform: rotate(5deg) scale(1.1);
 }
