@@ -7,6 +7,7 @@
 	--alt-color: #1787e0;
 	--fill-effect-color: #fafafa;
 	--transition-duration: 0.3s;
+	--section-padding: 100px 0;
 }
 
 /************************/
@@ -68,8 +69,8 @@ a {
 /* Section Header */
 
 /* the header box */
-.section-header {
-	margin: 100px auto;
+.section-heading {
+	margin: 0 auto 80px;
 	border: 2px solid black;
 	padding: 10px 20px;
 	font-size: 2rem;
@@ -84,8 +85,8 @@ a {
 }
 
 /* header dots on each side */
-.section-header::before,
-.section-header::after {
+.section-heading::before,
+.section-heading::after {
 	content: "";
 	width: 12px;
 	height: 12px;
@@ -104,28 +105,28 @@ a {
 	transform: translateY(-50%);
 }
 
-.section-header::before {
+.section-heading::before {
 	left: -30px;
 }
 
-.section-header::after {
+.section-heading::after {
 	right: -30px;
 }
 
 /* hover transition effects */
-.section-header:hover {
+.section-heading:hover {
 	color: white;
 	border: 2px solid white;
 	transition-delay: var(--transition-duration);
 }
 
-.section-header:hover::before {
+.section-heading:hover::before {
 	z-index: -1;
 	-webkit-animation: left-move var(--transition-duration) linear forwards;
 	animation: left-move var(--transition-duration) linear forwards;
 }
 
-.section-header:hover::after {
+.section-heading:hover::after {
 	z-index: -1;
 	animation: right-move var(--transition-duration) linear forwards;
 	-webkit-animation: right-move var(--transition-duration) linear forwards;
@@ -145,7 +146,7 @@ a {
 		-ms-border-radius: 0;
 		-o-border-radius: 0;
 		border-radius: 0;
-		width: 50%;
+		width: 51%;
 		height: 100%;
 	}
 }
@@ -164,7 +165,7 @@ a {
 		-ms-border-radius: 0;
 		-o-border-radius: 0;
 		border-radius: 0;
-		width: 50%;
+		width: 51%;
 		height: 100%;
 	}
 }
@@ -508,5 +509,97 @@ a {
 		-ms-transform: translateY(-15px);
 		-o-transform: translateY(-15px);
 		transform: translateY(-15px);
+	}
+}
+
+/********************/
+/***** Articles *****/
+/********************/
+
+.articles {
+	padding: var(--section-padding);
+	position: relative;
+}
+
+.articles .container {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(250px, 1fr)
+	); /* increase min if we need less boxes per row */
+	gap: 30px;
+}
+
+.articles .article {
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+	background-color: white; /* just in case we change the section bkground color */
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	overflow: hidden; /* keep image inside at the corners */
+	-webkit-transition: transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+	-moz-transition: transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+	-ms-transition: transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+	-o-transition: transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+	transition: transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+}
+
+.articles .article img {
+	max-width: 100%; /* make sure image doesn't overflow its container, add width if images are smaller */
+}
+
+.articles .article .article-content {
+	padding: 20px;
+}
+
+.articles .article .article-content p {
+	margin: 10px 0 0;
+	line-height: 1.5;
+	color: #777;
+}
+
+.articles .article .more-info {
+	padding: 20px;
+	border-top: 1px solid #e6e6e7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--main-color);
+}
+
+.articles .article .more-info a {
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+/* article hovering effects */
+.articles .article:hover {
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	-ms-transform: translateY(-10px);
+	-o-transform: translateY(-10px);
+	transform: translateY(-10px);
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.articles .article:hover i {
+	-webkit-animation: moving-arrow 0.6s linear infinite;
+	animation: moving-arrow 0.6s linear infinite;
+}
+
+@keyframes moving-arrow {
+	100% {
+		-webkit-transform: translateX(10px);
+		-moz-transform: translateX(10px);
+		-ms-transform: translateX(10px);
+		-o-transform: translateX(10px);
+		transform: translateX(10px);
 	}
 }
