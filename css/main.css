@@ -123,6 +123,7 @@ a {
 	); /* to delay the color changes after fill */
 }
 
+/* moving balls on each side */
 .section-heading:hover::before {
 	z-index: -1;
 	-webkit-animation: left-move var(--transition-duration) linear forwards;
