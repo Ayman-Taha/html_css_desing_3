@@ -723,6 +723,7 @@ a {
 	overflow: hidden;
 }
 
+/* overlay */
 .features .feature .image::before {
 	content: "";
 	position: absolute;
@@ -732,6 +733,7 @@ a {
 	height: 100%;
 }
 
+/* the partial cover on the image */
 .features .feature .image::after {
 	content: "";
 	position: absolute;
@@ -747,6 +749,7 @@ a {
 	transition: var(--transition-duration);
 }
 
+/* changing partial cover direction */
 .features .feature:hover .image::after {
 	border-width: 150px 500px 170px 0;
 }
@@ -760,9 +763,10 @@ a {
 	font-size: 2.5rem;
 	margin: auto;
 	width: -moz-fit-content;
-	width: fit-content; /* to keep the border as wide as the text only */
+	width: fit-content; /* to keep the border/after as wide as the text only */
 }
 
+/* line under h2 */
 .features .feature h2::after {
 	content: "";
 	position: absolute;
@@ -806,6 +810,7 @@ a {
 	color: white;
 }
 
+/* distinct styles for different features */
 .features .feature-1 .image::before {
 	background-color: rgba(244, 64, 54, 0.6);
 }
