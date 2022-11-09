@@ -1057,7 +1057,7 @@ a {
 .team .member .info h3 {
 	color: var(--main-color);
 	font-size: 1.5rem;
-	margin: 0;
+	margin: 10px;
 	-webkit-transition: var(--transition-duration);
 	-moz-transition: var(--transition-duration);
 	-ms-transition: var(--transition-duration);
@@ -1095,5 +1095,9 @@ a {
 		flex-direction: row;
 		justify-content: center;
 		margin: 10px;
+	}
+
+	.team .member .info h3 {
+		margin: 0;
 	}
 }
