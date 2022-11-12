@@ -1221,3 +1221,60 @@ a {
 	-o-transform: skewX(-30deg);
 	transform: skewX(-30deg);
 }
+
+/******************/
+/***** Skills *****/
+/******************/
+
+.skills {
+	padding: var(--section-padding);
+	position: relative;
+}
+
+.skills .container {
+	display: flex;
+	align-items: center;
+}
+
+@media (max-width: 991px) {
+	.skills img {
+		display: none;
+	}
+}
+
+.skills .skill-set {
+	flex: 1;
+}
+
+.skills .skill h3 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.skills .skill h3 span {
+	font-size: 0.8rem;
+	border: 1px solid #ccc;
+	padding: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	color: var(--main-color);
+}
+
+.skills .skill .progress {
+	height: 30px;
+	background-color: #eee;
+	position: relative;
+}
+
+.skills .skill .progress span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: var(--main-color);
+}
