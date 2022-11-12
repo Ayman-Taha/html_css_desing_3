@@ -335,6 +335,7 @@ a {
 	-ms-transition: var(--transition-duration);
 	-o-transition: var(--transition-duration);
 	transition: var(--transition-duration);
+	z-index: -1;
 }
 
 .header .mega-menu .links li:hover::before {
