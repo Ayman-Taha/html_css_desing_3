@@ -1561,3 +1561,170 @@ a {
 		border-radius: 0;
 	}
 }
+
+/*******************/
+/***** Pricing *****/
+/*******************/
+
+.pricing {
+	padding: var(--section-padding);
+	position: relative;
+	background-color: var(--section-bgcolor);
+}
+
+.pricing .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+}
+
+.pricing .plan {
+	position: relative;
+	box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.13),
+		0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+	background-color: white;
+	text-align: center;
+	z-index: 1;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+/* opposite filling effect on hover */
+.pricing .plan::before,
+.pricing .plan::after {
+	content: "";
+	height: 50%;
+	width: 0;
+	background-color: #f6f6f6;
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+.pricing .plan::before {
+	left: 0;
+	top: 0;
+}
+
+.pricing .plan::after {
+	right: 0;
+	bottom: 0;
+}
+
+.pricing .plan:hover::before,
+.pricing .plan:hover::after {
+	width: 100%;
+}
+
+/*popualr plan styling */
+@media (min-width: 1200px) {
+	.pricing .plan.popular {
+		top: -20px;
+	}
+}
+
+.pricing .plan.popular .label {
+	position: absolute;
+	right: 20px;
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+	background-color: var(--main-color);
+	color: white;
+	width: 40px;
+	padding: 10px 10px 35px;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+/* label arrow */
+.pricing .plan.popular .label::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-style: solid;
+	border-color: transparent transparent white;
+	border-width: 20px;
+}
+
+/* all plans styling */
+.pricing .plan .title {
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin: 30px 0;
+	letter-spacing: -1px;
+}
+
+.pricing .plan img {
+	width: 80px;
+	margin-bottom: 30px;
+}
+
+.pricing .plan .price {
+	margin-bottom: 20px;
+}
+
+.pricing .plan .price .amount {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 4rem;
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+.pricing .plan .price .time {
+	color: var(--p-text-color);
+}
+
+.pricing .plan ul {
+	text-align: left;
+}
+
+.pricing .plan ul li {
+	padding: 20px;
+	border-top: 1px solid #eee;
+}
+
+/* check mark on the left */
+.pricing .plan ul li::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f00c";
+	margin-right: 10px;
+	font-weight: 900;
+	color: var(--main-color);
+}
+
+.pricing .plan a {
+	display: block;
+	width: fit-content;
+	border: 2px solid var(--main-color);
+	color: var(--main-color);
+	margin: 30px auto 40px;
+	padding: 15px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px;
+	font-weight: bold;
+	-webkit-transition: var(--transition-duration);
+	-moz-transition: var(--transition-duration);
+	-ms-transition: var(--transition-duration);
+	-o-transition: var(--transition-duration);
+	transition: var(--transition-duration);
+}
+
+/* hover effect */
+.pricing .plan a:hover {
+	background-color: var(--alt-color);
+	color: white;
+	border-color: var(--alt-color);
+}
