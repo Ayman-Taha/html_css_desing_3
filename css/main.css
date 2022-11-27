@@ -2063,10 +2063,18 @@ div:nth-child(4n + 6).spikes::after {
 	background-color: var(--alt-color);
 }
 
+/* responsiveness */
 @media (min-width: 992px) {
 	.discount .image,
 	.discount .form {
 		flex-basis: 50%;
+	}
+}
+
+@media (max-width: 991px) {
+	.discount .image,
+	.discount .form {
+		padding: 60px 0;
 	}
 }
 
